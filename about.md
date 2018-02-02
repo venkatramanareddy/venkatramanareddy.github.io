@@ -3,5 +3,6 @@ layout: default
 title: About
 permalink: /about/
 ---
-
-[My Github Homepage](https://github.com/venkatramanareddy)
+<div class=main-container>
+    [My Github Homepage](https://github.com/venkatramanareddy)
+<div>

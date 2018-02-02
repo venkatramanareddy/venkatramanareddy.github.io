@@ -2,15 +2,41 @@
 layout: default
 ---
 <div class="main-container">
-    <div class="name-div">
-        For name....
+    <div class="header">
+        About me
     </div>
     <div class="sub-container">
-        <div class="header-2">Work experience</div>
-        <div class="text">Description of education</div>
+        <strong>Venkat Ramana Reddy</strong>
     </div>
     <div class="sub-container">
-        <div class="header-2">Hobbies</div>
-        <div class="text">Text for the header content</div>
+        <div class="sub-heading">
+            <strong>Hobbies</strong>
+        </div>
+        <div class="text">
+            <ul>
+                <li>Play football</li>
+                <li>Watch football(obviously!)</li>
+                <li>Follow anything that is viral!!</li>
+            </ul>
+        </div>
+    </div>
+    <div class="sub-container">
+        Find me -
+        <ul>
+            <li>
+                {% if site.twitter_username %}
+                <a href="https://twitter.com/{{site.twitter_username}}">
+                    <i class="fa fa-twitter"></i>Twitter
+                </a>
+                {% endif %}            
+            </li>
+            <li>
+                {% if site.github_username %}
+                <a href="https://github.com/{{site.github_username}}">
+                    <i class="fa fa-github"></i>GitHub
+                </a>
+                {% endif %}
+            </li>
+        </ul>
     </div>
 </div>
