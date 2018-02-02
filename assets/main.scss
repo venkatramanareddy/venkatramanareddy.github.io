@@ -1,0 +1,20 @@
+---
+# Main.scss
+---
+$base-font-family:   "Helvetica Nue" !default;
+$background-color: #3da2bb !default;
+
+body{
+    font: $base-font-family;
+    background-color: $background-color; 
+    main-container{
+        border: 1px solid #777777;
+        padding: 10px;
+        color: #da5858;
+        sub-container{
+            border: 1px solid #3dbb63;
+            padding:20px;
+            color: #333;
+        }
+    }
+}
