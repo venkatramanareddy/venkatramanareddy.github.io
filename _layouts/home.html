@@ -1,5 +1,5 @@
----
-layout: default
+--- 
+layout: default 
 ---
 <div class="main-container">
     <div class="header">
@@ -21,17 +21,26 @@ layout: default
         </div>
     </div>
     <div class="sub-container">
-        <a href="{{ "/game/snake" | relative_url }}">Want to play a game</a>
+        <a href="{{ "/game/snake" | relative_url }}">Want to play a game?</a>
     </div>
     <div class="sub-container">
         Find me -
         <ul>
             <li>
+                <a href="https://stackoverflow.com/users/5725669/venkat-ramana">
+                    <img src="https://stackoverflow.com/users/flair/5725669.png?theme=dark" width="208" height="58" alt="profile for Venkat Ramana at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                        title="profile for Venkat Ramana at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                </a>
+            </li>
+            <li>
                 {% if site.twitter_username %}
                 <a href="https://twitter.com/{{site.twitter_username}}">
-                    <i class="fa fa-twitter"></i>Twitter
+                    <!-- <i class="fa fa-twitter"></i>Twitter -->
+                    <a href="https://twitter.com/intent/tweet?screen_name=venkatramana96&ref_src=twsrc%5Etfw" class="twitter-mention-button"
+                        data-show-count="false"> Tweet to @venkatramana96</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </a>
-                {% endif %}            
+                {% endif %}
             </li>
             <li>
                 {% if site.github_username %}
