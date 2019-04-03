@@ -1,0 +1,88 @@
+---
+# Main.scss - Including all the theming in this sass file (Okay its scss).
+---
+
+// Text
+$base-font-family: Fira Mono !default;
+$base-font-size: 22px;
+$header-2: 100;
+
+// Background
+$background-color: #3da2bb !default;
+
+// Methods
+@mixin myborder($color){
+    border: 1px solid $color;
+}
+
+
+body{
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    // background-color: $background-color; 
+    overflow-x:hidden;
+    background: radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+}
+
+.header{
+    font-weight: bold;
+    color: blueviolet;
+}
+
+.main-container{
+    @include myborder(maroon);
+    padding: 10px;
+    .name-div{
+        @include myborder(maroon);
+        padding: 20px;
+        color: black;
+    }
+    .sub-container{
+        @include myborder(maroon);
+        padding: 20px;
+        color: black;
+    }
+}
+
+.ocean { 
+    height: 5%;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+    background: #015871;
+  }
+  
+  .wave {
+    background: url(/assets/wave.svg) repeat-x; 
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+  }
+  
+  @keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  }
+  
+  @keyframes swell {
+    0%, 100% {
+      transform: translate3d(0,-25px,0);
+    }
+    50% {
+      transform: translate3d(0,5px,0);
+    }
+  }
