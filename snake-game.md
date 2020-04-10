@@ -1,8 +1,13 @@
 ---
 layout: default
-title: Snake game
-permalink: /game/snake
+title: Game center
+permalink: /game/gamecenter
 ---
+<div>
+<div>
+<p>
+Snake v0.1
+</p>
 <!--Code for Snake Game-->
 <canvas id="gc" width="400" height="400"></canvas>
 <script>
@@ -76,3 +81,5 @@ permalink: /game/snake
     }
 
 </script>
+</div>
+</div>
