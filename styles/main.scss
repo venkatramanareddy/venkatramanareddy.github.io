@@ -20,34 +20,36 @@ body{
     font-family: $base-font-family;
     font-size: $base-font-size;
     // background-color: $background-color; 
+    background-color: #ffc680;
     overflow-x:hidden;
-    background: radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+    // background: radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
 }
 
-.header{
-    font-weight: bold;
-    color: blueviolet;
-}
 
 .main-container{
-    @include myborder(maroon);
+    // @include myborder(maroon);
     padding: 10px;
+    color: blueviolet;
+    .header{
+      padding:20px;
+      font-weight: bold;
+      font-size: xxx-large;
+    }
     .name-div{
-        @include myborder(maroon);
-        padding: 20px;
-        color: black;
+      // @include myborder(maroon);
+      padding: 20px;
     }
     .sub-container{
-        @include myborder(maroon);
+        // @include myborder(maroon);
         padding: 20px;
-        color: black;
-    }
+        font-size: x-large;
+      }
 }
 
 .ocean { 
     height: 5%;
     width:100%;
-    position:absolute;
+    position:fixed;
     bottom:0;
     left:0;
     background: #015871;
@@ -86,3 +88,45 @@ body{
       transform: translate3d(0,5px,0);
     }
   }
+
+.top-right{
+  position: fixed;
+  top: 30px;
+  right: 150px;
+}
+
+$sun-sphere: radial-gradient(
+  circle at 10px 10px,
+  #ffac26,
+  #faf141
+);
+
+.sun{
+  display: block;
+  border-radius: 100%;
+  height: 150px;
+  width: 150px;
+  margin: 0;
+  background: $sun-sphere;
+  box-shadow: 0px 0px 40px 20px #fce303,
+    0px 0px 70px 130px #fffb80,
+  0px 0px 200px 220px #ffff0b;
+}
+
+$moon-sphere: radial-gradient(
+  circle at 10px 10px,
+  #f2f1ce,
+  #fafaf2
+);
+
+.moon{
+  display: none;
+  border-radius: 100%;
+  height: 150px;
+  width: 150px;
+  margin: 0;
+  background: $moon-sphere;
+  box-shadow: 0px 0px 40px 20px #f6f7d7,
+   0px 0px 70px 130px #fafaf2,
+  0px 0px 200px 220px #fafaf2;
+}
