@@ -1,27 +1,37 @@
 --- 
 layout: default 
 ---
+<script>
+    var isSun = true;
+    function toggleMode(){
+        // alert("Dark mode coming soon!!");
+        isSun = !isSun;
+        if(isSun){
+            document.getElementById("sun").style.display = "block";
+            document.getElementById("moon").style.display = "none";
+            document.getElementsByTagName("body")[0].style.background="#ffc680";
+            console.log("switched to sun");
+        }
+        else{
+            document.getElementById("sun").style.display = "none";
+            document.getElementById("moon").style.display = "block";
+            document.getElementsByTagName("body")[0].style.background="#2b2b2b";
+            console.log("switched to moon");
+        }
+    }
+</script>
 <div class="main-container">
+    <div class="sun top-right" id="sun" onclick="toggleMode()"></div>
+    <div class="moon top-right" id="moon" onclick="toggleMode()" hidden></div>
     <div class="header">
-        About me
+        I'm Venkat 
     </div>
-    <div class="sub-container">
-        <strong>Venkat Ramana Reddy</strong>
-    </div>
-    <div class="sub-container">
-        <div class="sub-heading">
-            <strong>Hobbies</strong>
-        </div>
-        <div class="text">
-            <ul>
-                <li>Play football</li>
-                <li>Watch football(obviously!)</li>
-                <li>Follow anything that is viral!!</li>
-            </ul>
-        </div>
+    <div class="sub-container sub-header">
+        A Full-Stack developer with ears on anything new in CS field. 
     </div>
     <div class="sub-container">
         <a href="{{ '/game/gamecenter' | relative_url }}">Want to play a game?</a>
+        (or in mood to find some easter eggs?)
     </div>
     <div class="sub-container">
         Find me -
@@ -49,6 +59,13 @@ layout: default
                 </a>
                 {% endif %}
             </li>
+            <li>
+                {% if site.codepen_url %}
+                <a href="{{ site.codepen_url }}">
+                    <img src="https://aleen42.github.io/badges/src/codepen.svg" alt="codepen"/>
+                </a>
+                {% endif %}
+            </li>
         </ul>
     </div>
 </div>
@@ -56,4 +73,4 @@ layout: default
 <div class="ocean">
     <div class="wave"></div>
     <div class="wave"></div>
-  </div>
+</div>
