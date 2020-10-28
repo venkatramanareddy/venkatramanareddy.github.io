@@ -11,13 +11,22 @@ layout: default
             document.getElementById("moon").style.display = "none";
             document.getElementsByTagName("body")[0].style.background="#ffc680";
             console.log("switched to sun");
+            gtag('event', 'select_content', {
+              content_type: "SunMode"});
         }
         else{
             document.getElementById("sun").style.display = "none";
             document.getElementById("moon").style.display = "block";
             document.getElementsByTagName("body")[0].style.background="#2b2b2b";
             console.log("switched to moon");
+            gtag('event', 'select_content', {
+              content_type: "MoonMode"});
         }
+    }
+    function selectedLink(content){
+        console.log(content);
+        gtag('event', 'select_content', {
+              content_type: content});
     }
 </script>
 <div class="main-container">
@@ -37,31 +46,31 @@ layout: default
         Find me -
         <ul>
             <li>
-                <a href="https://stackoverflow.com/users/5725669/venkat-ramana">
+                <a href="https://stackoverflow.com/users/5725669/venkat-ramana" onclick="selectedLink('stackoverflow')">
                     <img src="https://stackoverflow.com/users/flair/5725669.png?theme=dark" width="208" height="58" alt="profile for Venkat Ramana at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
                         title="profile for Venkat Ramana at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
                 </a>
             </li>
             <li>
                 {% if site.twitter_username %}
-                <a href="https://twitter.com/{{site.twitter_username}}">
+                <a href="https://twitter.com/{{site.twitter_username}}" onclick="selectedLink('twitter')">
                     <!-- <i class="fa fa-twitter"></i>Twitter -->
                     <a href="https://twitter.com/intent/tweet?screen_name=venkatramana96&ref_src=twsrc%5Etfw" class="twitter-mention-button"
                         data-show-count="false"> Tweet to @venkatramana96</a>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </a>
+                    </a>
                 {% endif %}
             </li>
             <li>
                 {% if site.github_username %}
-                <a href="https://github.com/{{site.github_username}}">
+                <a href="https://github.com/{{site.github_username}}" onclick="selectedLink('github')">
                     <i class="fa fa-github"></i>GitHub
                 </a>
                 {% endif %}
             </li>
             <li>
                 {% if site.codepen_url %}
-                <a href="{{ site.codepen_url }}">
+                <a href="{{ site.codepen_url }}" onClick="selectedLink('codepen')">
                     <img src="https://aleen42.github.io/badges/src/codepen.svg" alt="codepen"/>
                 </a>
                 {% endif %}
