@@ -30,19 +30,24 @@ layout: default
     }
 </script>
 <div class="main-container">
+    <div id="rain-effect">
+        {% for i in (1...150) %}
+         <i class="rain"></i>
+        {% endfor %}
+    </div>
     <div class="sun top-right" id="sun" onclick="toggleMode()"></div>
     <div class="moon top-right" id="moon" onclick="toggleMode()" hidden></div>
-    <div class="header">
+    <div class="header left-side-content">
         I'm Venkat 
     </div>
-    <div class="sub-container sub-header">
-        A Full-Stack developer with ears on anything new in CS field. 
+    <div class="sub-container sub-header left-side-content">
+        A Full-Stack developer with eyes and ears on anything in CS or soccer.
     </div>
-    <div class="sub-container">
+    <div class="sub-container left-side-content">
         <a href="{{ '/game/gamecenter' | relative_url }}">Want to play a game?</a>
         (or in mood to find some easter eggs?)
     </div>
-    <div class="sub-container">
+    <div class="sub-container left-side-content">
         Find me -
         <ul>
             <li>
